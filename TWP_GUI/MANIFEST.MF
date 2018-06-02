@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+
+Name: COMPONENTE
+nombre: estructura.interfaces.IVisualizacion
+clase: com.logica.TwoWheelsParkingGUI
+
