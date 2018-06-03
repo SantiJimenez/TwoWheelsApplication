@@ -1,8 +1,5 @@
 package estructura.interfaces;
 
-import estructura.modelos.Espacio;
-import estructura.modelos.Usuario;
-
 public interface IRecaudo {
 	
 	/**
@@ -10,7 +7,7 @@ public interface IRecaudo {
 	 * @param usuario
 	 * @param espacio
 	 */
-	void captarPago(int monto, Usuario usuario, Espacio espacio);
+	void captarPago(int monto, int idUsuario, int idEspacio);
 	void calcularTarifa(int tiempo);
 	
 }
