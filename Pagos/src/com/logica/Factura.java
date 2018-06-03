@@ -12,7 +12,7 @@ public class Factura {
 	private String fecha;
 	private int tiempo;
 	
-	//estoy poniendo algunos, despues miro si se necesitan mas o menos
+	//estoy poniendo algunos, despues miro si se necesitan mas o menos atributos
 	
 	private Pago pago;
 	
@@ -29,9 +29,8 @@ public class Factura {
 		this.pago = pago;
 	}
 	
-	public void pagar(){
-		//Corregir estoS
-		pago.pagar(new TarjetaFrecuente(usuario), tiempo);
+	public void pagar(Tarjeta tarjeta){
+		pago.pagar(tarjeta, this.tiempo);
 	}
 	
 }
