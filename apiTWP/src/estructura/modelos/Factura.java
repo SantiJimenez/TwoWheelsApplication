@@ -7,12 +7,13 @@ import estructura.modelos.Usuario;
 
 public abstract class Factura {
 
-	private int id;
-	private int idUsuario;
-	private int idEspacio;
-	private double valor;
-	private Date fecha;
-	private int tiempo;
+	protected int id;
+	protected int idUsuario;
+	protected int idEspacio;
+	protected double valor;
+	protected Date fecha;
+	protected int tiempo;
+	
 	public int getId() {
 		return id;
 	}

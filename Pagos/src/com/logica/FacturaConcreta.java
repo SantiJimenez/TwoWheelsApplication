@@ -7,13 +7,6 @@ import estructura.modelos.Factura;
 import estructura.modelos.Usuario;
 
 public class FacturaConcreta extends Factura{
-
-	private int id;
-	private int idUsuario;
-	private int idEspacio;
-	private double valor;
-	private Date fecha;
-	private int tiempo;
 	
 	//estoy poniendo algunos, despues miro si se necesitan mas o menos atributos
 	

@@ -17,6 +17,9 @@ public class Pagos implements IRecaudo {
 	public void captarPago(int id, int idUsuario, int idEspacio, int tiempo) {
 		FacturaConcreta factura = new FacturaConcreta(id, idUsuario, idEspacio, tiempo);
 		listaFacturas.put(id, factura);
+		System.out.println("Factura creada: " + factura);
+		System.out.println("Lista Facturas: " + listaFacturas);
+		
 	}
 
 	@Override
