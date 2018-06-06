@@ -11,11 +11,14 @@ public class TwoWheelsDigital {
 	public static void main(String[] args) {
 		
 		cc = new ConectorComponentes();
-		Hashtable<Integer, Usuario> listaUsuarios = new Hashtable<Integer, Usuario>();
 		
 		cc.getUsuarios().crearUsuario(1, "Daniela", "Cordoba", "12345678", "Administrador");
 		cc.getUsuarios().crearUsuario(2, "Santiago", "Jimenez", "23456789", "Operario");
 		cc.getUsuarios().crearUsuario(3, "Johan", "Quiroga", "123", "Cliente");
+		
+		cc.getEspacios().crearEspacio(1);
+		cc.getEspacios().crearEspacio(2);
+		cc.getEspacios().crearEspacio(3);
 		
 		VentanaInicial vInicial = new VentanaInicial(cc);
 		vInicial.setVisible(true);

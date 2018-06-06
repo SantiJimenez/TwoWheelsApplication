@@ -26,12 +26,14 @@ public class VentanaInicial extends JFrame implements ActionListener{
 	private JButton btnGestorDeUsuarios, btnGestorDeEspacios, btnPagos, btnEstadisticas;
 	
 	protected VentanaUsuarios ventanaUsuarios;
+	protected VentanaEspacios ventanaEspacios;
 	
 	/**
 	 * Create the application.
 	 */
 	public VentanaInicial(ConectorComponentes cc) {
 		ventanaUsuarios = new VentanaUsuarios(cc);
+		ventanaEspacios = new VentanaEspacios(cc);
 		initialize();
 	}
 
@@ -87,6 +89,7 @@ public class VentanaInicial extends JFrame implements ActionListener{
 		
 		if(accion == "ESPACIOS") {
 			System.out.println("Boton espacios presionado");
+			ventanaEspacios.setVisible(true);
 		}
 		
 		if(accion == "PAGOS") {
