@@ -3,4 +3,3 @@ Manifest-Version: 1.0
 Name: COMPONENTE
 nombre: estructura.interfaces.IUsuarios
 clase: com.logica.GestorUsuarios
-

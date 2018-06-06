@@ -1,17 +1,20 @@
 package com.logica;
 
+import estructura.modelos.Usuario;
+
 public class Operario extends Usuario{
 
-	public Operario(String nombre, String apellido, String telefono){
-		this.id = 1;
+	public Operario(int id, String nombre, String apellido, String telefono){
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
+		this.tipo = "Operario";
 	}
 	
 	@Override
-	public Usuario clonar(String nombre, String apellido, String telefono) {
-		Usuario usuario = new Operario(nombre, apellido, telefono);
+	public Usuario clonar(int id, String nombre, String apellido, String telefono) {
+		Usuario usuario = new Operario(id, nombre, apellido, telefono);
 		return usuario;
 	}
 	
