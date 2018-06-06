@@ -5,8 +5,8 @@ import estructura.modelos.Usuario;
 public class CreadorTarjetaFrecuente extends CreadorTarjeta{
 
 	@Override
-	public Tarjeta crearTarjeta(Usuario cliente) {
-		return new TarjetaFrecuente(cliente);
+	public Tarjeta crearTarjeta(int id, int idCliente) {
+		return new TarjetaFrecuente(id, idCliente);
 	}
 	
 	

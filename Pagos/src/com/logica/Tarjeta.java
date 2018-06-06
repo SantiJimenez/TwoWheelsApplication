@@ -1,11 +1,9 @@
 package com.logica;
 
-import estructura.modelos.Usuario;
-
 public abstract class Tarjeta {
 	
 	protected int id;
-	protected Usuario cliente;
+	protected int idCliente;
 	protected String codigoBarras;
 	protected float tasa;
 	
@@ -13,8 +11,8 @@ public abstract class Tarjeta {
 		return id;
 	}
 	
-	public Usuario getCliente() {
-		return cliente;
+	public int getCliente() {
+		return idCliente;
 	}
 	
 	public String getCodigoBarras() {
