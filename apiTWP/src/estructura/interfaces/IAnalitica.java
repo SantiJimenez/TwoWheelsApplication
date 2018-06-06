@@ -2,8 +2,13 @@ package estructura.interfaces;
 
 public interface IAnalitica {
 	
-	void calcularIngresosVehiculos();
-	void calcularRetirosVehiculos();
-	void calcularGanancias();
+	public void calcularIngresosVehiculos();
+	public void calcularRetirosVehiculos();
+	public void calcularGanancias();
 	
+	public void registrarEvento();
+	public void reporteTiempoAparcamiento();
+	public void reporteIngresos();
+	public void reporteDisponibilidad();
+	public void reporteInventario();
 }
