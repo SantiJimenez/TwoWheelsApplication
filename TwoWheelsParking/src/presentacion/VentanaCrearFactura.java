@@ -14,6 +14,7 @@ import estructura.modelos.Espacio;
 import estructura.modelos.Usuario;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -45,11 +46,14 @@ public class VentanaCrearFactura extends JFrame implements ActionListener{
 	private int id;
 	private double valor;
 
+	protected VentanaElegirEspacio vElegirEspacio;
+	
 	/**
 	 * Create the frame.
 	 */
-	public VentanaCrearFactura(ConectorComponentes cc) {
+	public VentanaCrearFactura(ConectorComponentes cc, VentanaElegirEspacio vElegirEspacio) {
 		this.cc = cc;		
+		this.vElegirEspacio = vElegirEspacio;
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 263, 298);
@@ -134,8 +138,15 @@ public class VentanaCrearFactura extends JFrame implements ActionListener{
 		String accion = e.getActionCommand();
 		
 		if(accion == "CREAR") {
+			id++;
+			System.out.println(id);
+			System.out.println("id: " + id + "- idUsuario: " + Integer.parseInt(lblDocumentoUsuario.getText()) + " - idEspacio: "+ Integer.parseInt(lblEspacio.getText()) + " - valor: " + valor);
 			cc.getRecaudo().captarPago(id, Integer.parseInt(lblDocumentoUsuario.getText()), Integer.parseInt(lblEspacio.getText()), (int)valor);
+			System.out.println(cc.getRecaudo().obtenerListaFacturas());
+			System.out.println("Usuario Factura: " + cc.getRecaudo().obtenerListaFacturas().get(id).getIdUsuario());
 			cc.getEspacios().cambiarEstadoEspacio(Integer.parseInt(lblEspacio.getText()), 0, "Disponible");
+			vElegirEspacio.listarEspacios();
+			JOptionPane.showMessageDialog(this, "Pago realizado");
 			this.setVisible(false);
 		}
 		

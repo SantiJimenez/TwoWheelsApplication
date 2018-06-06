@@ -15,6 +15,10 @@ public class TwoWheelsDigital {
 		cc.getUsuarios().crearUsuario(1, "Daniela", "Cordoba", "12345678", "Cliente");
 		cc.getUsuarios().crearUsuario(2, "Santiago", "Jimenez", "23456789", "Cliente");
 		cc.getUsuarios().crearUsuario(3, "Johan", "Quiroga", "123", "Cliente");
+		cc.getUsuarios().crearUsuario(4, "Pedro", "Cardona", "5678", "Operario");
+		cc.getUsuarios().crearUsuario(5, "Laura", "Garcia", "234569", "Operario");
+		cc.getUsuarios().crearUsuario(6, "Alejandro", "Gonzalez", "23123", "Administrador");
+		
 		
 		cc.getEspacios().crearEspacio(1);
 		cc.getEspacios().crearEspacio(2);

@@ -76,6 +76,7 @@ public class VentanaPagos extends JFrame implements ActionListener{
 		}
 		
 		if(accion == "LISTAR") {
+			vListaFacturas.listarFacturas();
 			vListaFacturas.setVisible(true);
 		}
 	}

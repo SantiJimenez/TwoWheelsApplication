@@ -48,7 +48,7 @@ public class VentanaElegirEspacio extends JFrame implements ActionListener{
 		
 		this.cc = cc;
 		this.vListaFacturas = vListaFacturas;
-		this.vCrearFactura = new VentanaCrearFactura(cc);
+		this.vCrearFactura = new VentanaCrearFactura(cc, this);
 		
 		this.dtm = new DefaultTableModel(
 			new Object[][] {
@@ -59,7 +59,7 @@ public class VentanaElegirEspacio extends JFrame implements ActionListener{
 		
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 677, 300);
+		setBounds(100, 100, 635, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -67,11 +67,11 @@ public class VentanaElegirEspacio extends JFrame implements ActionListener{
 		
 		lblUsuarios = new JLabel("ESPACIOS OCUPADOS");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsuarios.setBounds(10, 11, 641, 14);
+		lblUsuarios.setBounds(10, 11, 428, 14);
 		contentPane.add(lblUsuarios);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 46, 493, 204);
+		scrollPane.setBounds(10, 46, 599, 204);
 		contentPane.add(scrollPane);
 		
 		tblUsuarios = new JTable(dtm);
@@ -79,7 +79,7 @@ public class VentanaElegirEspacio extends JFrame implements ActionListener{
 		scrollPane.setViewportView(tblUsuarios);
 		
 		btnElegirEspacio = new JButton("Seleccionar Espacio");
-		btnElegirEspacio.setBounds(513, 43, 138, 23);
+		btnElegirEspacio.setBounds(448, 7, 161, 23);
 		btnElegirEspacio.setActionCommand("SELECCIONAR");
 		btnElegirEspacio.addActionListener(this);
 		contentPane.add(btnElegirEspacio);

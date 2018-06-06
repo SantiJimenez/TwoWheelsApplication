@@ -55,7 +55,7 @@ public class VentanaElegirUsuario extends JFrame implements ActionListener{
 		
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 677, 300);
+		setBounds(100, 100, 635, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -63,11 +63,11 @@ public class VentanaElegirUsuario extends JFrame implements ActionListener{
 		
 		lblUsuarios = new JLabel("USUARIOS");
 		lblUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsuarios.setBounds(10, 11, 641, 14);
+		lblUsuarios.setBounds(10, 11, 413, 14);
 		contentPane.add(lblUsuarios);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 46, 493, 204);
+		scrollPane.setBounds(10, 46, 599, 204);
 		contentPane.add(scrollPane);
 		
 		tblUsuarios = new JTable(dtm);
@@ -75,7 +75,7 @@ public class VentanaElegirUsuario extends JFrame implements ActionListener{
 		scrollPane.setViewportView(tblUsuarios);
 		
 		btnElegirUsuario = new JButton("Seleccionar Usuario");
-		btnElegirUsuario.setBounds(513, 43, 138, 23);
+		btnElegirUsuario.setBounds(433, 7, 176, 23);
 		btnElegirUsuario.setActionCommand("SELECCIONAR");
 		btnElegirUsuario.addActionListener(this);
 		contentPane.add(btnElegirUsuario);

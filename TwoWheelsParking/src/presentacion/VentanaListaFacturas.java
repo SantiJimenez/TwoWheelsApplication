@@ -45,7 +45,7 @@ public class VentanaListaFacturas extends JFrame implements ActionListener{
 			new Object[][] {
 			},
 			new String[] {
-				"Identificador", "Usuario", "Espacio", "valor"
+				"Identificador", "Usuario", "Espacio", "Fecha", "valor"
 		});
 		
 		
@@ -83,7 +83,7 @@ public class VentanaListaFacturas extends JFrame implements ActionListener{
 		dtm.setRowCount(0);
 		System.out.println(cc.getRecaudo().obtenerListaFacturas());
 		for(java.util.Map.Entry<Integer, Factura> entry: cc.getRecaudo().obtenerListaFacturas().entrySet()) {
-		   dtm.addRow(new Object[] {entry.getKey(), entry.getValue().getIdUsuario(), entry.getValue().getIdEspacio(), entry.getValue().getValor()});
+		   dtm.addRow(new Object[] {entry.getKey(), entry.getValue().getIdUsuario(), entry.getValue().getIdEspacio(), entry.getValue().getFecha(),entry.getValue().getValor()});
 		   System.out.println("Agregando fila: " + entry.getValue().getId());
 		   dtm.fireTableDataChanged();
 		}
