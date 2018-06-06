@@ -4,10 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.logica.ConectorComponentes;
+
+import estructura.modelos.Usuario;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -17,11 +23,18 @@ public class VentanaUsuarios extends JFrame implements ActionListener{
 	private JPanel contentPane;
 	private JButton btnCrearUsuario, btnBuscarUsuario;
 	private JLabel lblAdministracionDeUsuarios;
-
+	
+	protected VentanaCrearUsuario vCrearUsuario;
+	protected VentanaListaUsuarios vListaUsuarios;
+	
 	/**
 	 * Create the frame.
 	 */
-	public VentanaUsuarios() {
+	public VentanaUsuarios(ConectorComponentes cc) {
+		
+		vCrearUsuario = new VentanaCrearUsuario(cc);
+		vListaUsuarios = new VentanaListaUsuarios(cc);
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 387, 116);
 		contentPane = new JPanel();
@@ -55,13 +68,12 @@ public class VentanaUsuarios extends JFrame implements ActionListener{
 		
 		if(accion == "CREAR") {
 			System.out.println("Boton crear usuario presionado");
-			VentanaCrearUsuario vCrearUsuario = new VentanaCrearUsuario();
 			vCrearUsuario.setVisible(true);
 		}
 		
 		if(accion == "LISTAR") {
 			System.out.println("Boton listar usuarios presionado");
-			VentanaListaUsuarios vListaUsuarios = new VentanaListaUsuarios();
+			vListaUsuarios.listarUsuarios();
 			vListaUsuarios.setVisible(true);
 		}
 	}

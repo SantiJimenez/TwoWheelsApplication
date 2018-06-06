@@ -1,13 +1,20 @@
 package presentacion;
 
 import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Hashtable;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import com.logica.ConectorComponentes;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
+import estructura.modelos.Usuario; 									
 
 public class VentanaInicial extends JFrame implements ActionListener{
 
@@ -17,28 +24,14 @@ public class VentanaInicial extends JFrame implements ActionListener{
 	private static final long serialVersionUID = -6900234492144691609L;
 	private JLabel lblLogo;
 	private JButton btnGestorDeUsuarios, btnGestorDeEspacios, btnPagos, btnEstadisticas;
-
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaInicial window = new VentanaInicial();
-					window.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	protected VentanaUsuarios ventanaUsuarios;
+	
 	/**
 	 * Create the application.
 	 */
-	public VentanaInicial() {
+	public VentanaInicial(ConectorComponentes cc) {
+		ventanaUsuarios = new VentanaUsuarios(cc);
 		initialize();
 	}
 
@@ -89,7 +82,6 @@ public class VentanaInicial extends JFrame implements ActionListener{
 		
 		if(accion == "USUARIOS") {
 			System.out.println("Boton usuarios presionado");
-			VentanaUsuarios ventanaUsuarios = new VentanaUsuarios();
 			ventanaUsuarios.setVisible(true);
 		}
 		
@@ -106,4 +98,5 @@ public class VentanaInicial extends JFrame implements ActionListener{
 		}
 		
 	}
+	
 }

@@ -4,7 +4,6 @@ import estructura.interfaces.IAnalitica;
 import estructura.interfaces.IEspacios;
 import estructura.interfaces.IRecaudo;
 import estructura.interfaces.IUsuarios;
-import estructura.interfaces.IVisualizacion;
 
 public class ConectorComponentes {
 
