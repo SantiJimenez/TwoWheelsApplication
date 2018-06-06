@@ -1,23 +1,32 @@
 package com.logica;
 
-import java.awt.Frame;
-
-import javax.swing.JOptionPane;
+import java.util.Hashtable;
 
 import estructura.interfaces.IRecaudo;
-import estructura.modelos.Espacio;
-import estructura.modelos.Usuario;
+import estructura.modelos.Factura;
 
 public class Pagos implements IRecaudo {
 
+	private Hashtable<Integer, Factura> listaFacturas;
+	
+	public Pagos() {
+		this.listaFacturas = new Hashtable<Integer, Factura>();
+	}
+	
 	@Override
-	public void calcularTarifa(int arg0) {
-		JOptionPane.showMessageDialog(new Frame(), "Calcular tarifa", this.getClass().getName(), JOptionPane.INFORMATION_MESSAGE);
+	public void captarPago(int id, int idUsuario, int idEspacio, int tiempo) {
+		FacturaConcreta factura = new FacturaConcreta(id, idUsuario, idEspacio, tiempo);
+		listaFacturas.put(id, factura);
 	}
 
 	@Override
-	public void captarPago(int arg0, Usuario arg1, Espacio arg2) {
-		JOptionPane.showMessageDialog(new Frame(), "Captar pago", this.getClass().getName(), JOptionPane.INFORMATION_MESSAGE);
+	public void crearTarjeta(int arg0, int arg1, String arg2) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Hashtable<Integer, Factura> obtenerListaFacturas() {
+		return this.listaFacturas;
 	}
 
 }

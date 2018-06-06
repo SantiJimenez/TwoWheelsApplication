@@ -27,6 +27,7 @@ public class VentanaInicial extends JFrame implements ActionListener{
 	
 	protected VentanaUsuarios ventanaUsuarios;
 	protected VentanaEspacios ventanaEspacios;
+	protected VentanaPagos ventanaPagos;
 	
 	/**
 	 * Create the application.
@@ -34,6 +35,7 @@ public class VentanaInicial extends JFrame implements ActionListener{
 	public VentanaInicial(ConectorComponentes cc) {
 		ventanaUsuarios = new VentanaUsuarios(cc);
 		ventanaEspacios = new VentanaEspacios(cc);
+		ventanaPagos = new VentanaPagos(cc);
 		initialize();
 	}
 
@@ -94,6 +96,7 @@ public class VentanaInicial extends JFrame implements ActionListener{
 		
 		if(accion == "PAGOS") {
 			System.out.println("Boton pagos presionado");
+			ventanaPagos.setVisible(true);
 		}
 		
 		if(accion == "ESTADISTICAS") {

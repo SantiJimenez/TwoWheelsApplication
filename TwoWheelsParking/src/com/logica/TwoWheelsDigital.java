@@ -12,8 +12,8 @@ public class TwoWheelsDigital {
 		
 		cc = new ConectorComponentes();
 		
-		cc.getUsuarios().crearUsuario(1, "Daniela", "Cordoba", "12345678", "Administrador");
-		cc.getUsuarios().crearUsuario(2, "Santiago", "Jimenez", "23456789", "Operario");
+		cc.getUsuarios().crearUsuario(1, "Daniela", "Cordoba", "12345678", "Cliente");
+		cc.getUsuarios().crearUsuario(2, "Santiago", "Jimenez", "23456789", "Cliente");
 		cc.getUsuarios().crearUsuario(3, "Johan", "Quiroga", "123", "Cliente");
 		
 		cc.getEspacios().crearEspacio(1);

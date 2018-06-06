@@ -119,9 +119,9 @@ public class VentanaListaUsuarios extends JFrame implements ActionListener{
 		System.out.println("Listando Usuarios");
 		dtm.setRowCount(0);
 		for(java.util.Map.Entry<Integer, Usuario> entry: cc.getUsuarios().obtenerListaUsuarios().entrySet()) {
-		   dtm.addRow(new Object[] {entry.getKey(), entry.getValue().getNombre(), entry.getValue().getApellido(), entry.getValue().getTelefono(), entry.getValue().getTipo()});
-		   System.out.println("Agregando fila: " + entry.getValue().getNombre());
-		   dtm.fireTableDataChanged();
+			dtm.addRow(new Object[] {entry.getKey(), entry.getValue().getNombre(), entry.getValue().getApellido(), entry.getValue().getTelefono(), entry.getValue().getTipo()});
+			System.out.println("Agregando fila: " + entry.getValue().getNombre());
+			dtm.fireTableDataChanged();
 		}
 	}
 }
