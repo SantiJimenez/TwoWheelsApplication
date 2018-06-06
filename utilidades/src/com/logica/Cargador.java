@@ -20,16 +20,25 @@ public class Cargador {
 		urls = new URL[archivos.length];
 		for (int i=0;i<archivos.length;i++) {
 			try {
+				System.out.println("-----------------------------");
 				JarFile archivo = new JarFile(archivos[i]);
+				if (archivo.getManifest() == null) {
+					System.out.println("Sin manifiesto");
+				}else{
+					System.out.println("Con manifiesto");
+				}
 				Manifest m = archivo.getManifest();
-				archivo.close();
+				//Attributes atributos = m.getMainAttributes();
 				Attributes atributos = m.getAttributes("COMPONENTE");
+				System.out.println("archivo: " + archivo.getName());
+				System.out.println("atributos: " + atributos);
 				String nc = atributos.getValue("nombre");
 				String cl = atributos.getValue("clase");
 				System.out.println("En cargador, nombre: " + nc + " - clase: " + cl);
 				//Lo minimo que tiene un elemento
 				urls[i] = archivos[i].toURI().toURL();
 				registro.put(nc,cl);
+				archivo.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
