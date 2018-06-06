@@ -1,4 +1,4 @@
-package com.logica;
+package estructura.modelos;
 
 public abstract class Estado {
 
@@ -6,6 +6,10 @@ public abstract class Estado {
 	
 	public Estado(String estado){
 		this.estado = estado;
+	}
+	
+	public String getEstado(){
+		return estado;
 	}
 	
 	public abstract void actualizarEstado();
